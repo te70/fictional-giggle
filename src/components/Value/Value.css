@@ -1,5 +1,10 @@
+.v-container {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
 .v-container .image-container {
-    border: 8px solid rgb(232 232 232 / 93%);
+    border: 8px;
 }
 
 .v-container>div {

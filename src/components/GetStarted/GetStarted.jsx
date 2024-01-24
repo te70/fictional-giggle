@@ -6,17 +6,17 @@ function GetStarted() {
     <section className="g-wrapper">
         <div className="paddings innerWidth g-container">
             <div className="flexColCenter inner-container">
-                <span className='primaryText'>Get Started with Homyz</span>
-                <span className='secondaryText'>Subscribe and find super attractive price quotes
+                <span className='primaryText'>Get Started with Elvich</span>
+                <span className='secondaryText'>In an ever changing business world
                     <br/>
-                    Find your residence soon
+                    Find coveted talent here
                 </span>
                 <button className="button">
                     <a href="mailto:tevinkinuthia@gmail.com">Get Started</a>
                 </button>
             </div>
         </div>
-    </section>
+    </section> 
   )
 }
 

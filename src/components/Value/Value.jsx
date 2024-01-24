@@ -7,22 +7,22 @@ import data from '../../utils/accordion'
 import { useState } from 'react';
 function Value() {
   return (
-    <section className='v-wrapper'>
+    <section className='v-wrapper' id="value">
         <div className="paddings innerWidth flexCenter v-container">
             {/* left side */}
-            <div className="v-left">
+            <div className="v-left"> 
                 <div className="image-container">
-                    <img src='./value.png' alt=''/>
+                    <img src='./lady_2.jpg' alt=''/>
                 </div>
             </div>
 
             {/* right side */}
             <div className="flexColStart v-right">
-                <span className='orangeText'>Our Value</span>
+                <span className='greenText'>Our Value</span>
                 <span className='primaryText'>Value we give to you</span>
                 <span className='secondaryText'>We always ready to help you providing the best services for you
                 <br/>
-                We believe a good place to live can ypu make your life better
+                We believe a good talent can make your life better
                 </span>
                 <Accordion
                     className="accordion"
