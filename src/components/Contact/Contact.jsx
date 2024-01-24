@@ -52,7 +52,7 @@ function Contact() {
                 </div>
             </div>
             {/* right side */}
-            <div className="c-right">
+            <div className="flexCenter c-right">
                 <div className="image-container">
                     <img src='./lady_3.jpg' alt=''/>
                 </div>

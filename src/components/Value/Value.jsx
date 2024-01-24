@@ -10,8 +10,8 @@ function Value() {
     <section className='v-wrapper' id="value">
         <div className="paddings innerWidth flexCenter v-container">
             {/* left side */}
-            <div className="v-left"> 
-                <div className="image-container">
+            <div className="flexCenter v-left"> 
+                <div className="image-container"> 
                     <img src='./lady_2.jpg' alt=''/>
                 </div>
             </div>

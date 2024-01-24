@@ -9,13 +9,13 @@ const data = [
   },
   {
     icon: <HiShieldCheck />,
-    heading: "Quick reaction services",
+    heading: "Quick reaction services", 
     detail:
       "Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.",
   },
   {
     icon: <MdAnalytics />,
-    heading: "Backed by data & market research",
+    heading: "Backed by data",
     detail:
       "Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.",
   },

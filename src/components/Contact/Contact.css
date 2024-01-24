@@ -93,3 +93,9 @@
         width: 100%;
     }
 }
+
+@media (max-width: 768px) {
+    .c-wrapper {
+        padding-top: 3rem;
+    }
+}

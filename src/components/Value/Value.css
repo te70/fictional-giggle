@@ -64,5 +64,10 @@
         .accordionButton .primaryText {
             font-size: 0.7rem;
         }
+
+        .v-left{
+            width: 95%;
+            height: 25rem; 
+        }
     }
-}
+} 
