@@ -9,7 +9,7 @@ function GetStarted() {
                 <span className='primaryText'>Get Started with Elvich</span>
                 <span className='secondaryText'>In an ever changing business world
                     <br/>
-                    Find coveted talent here
+                    Find coveted human resource consultancy here
                 </span>
                 <button className="button">
                     <a href="mailto:tevinkinuthia@gmail.com">Get Started</a>

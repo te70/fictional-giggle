@@ -10,18 +10,18 @@ function Residencies() {
     <section className='r-wrapper'>
       <div className='paddings innerWidth r-container'>
         <div className="r-head flexColStart">
-          <span className='orangeText'>Best choices</span>
-          <span className='primaryText'>Popular Residencies</span>
+          <span className='greenText'>Our services</span>
+          <span className='primaryText'>Delivered with efficiency</span>
         </div>
         <Swiper {...sliderSettings}>
           <SliderButtons/>
           {
             data.map((card, i)=>(
               <SwiperSlide key={i}>
-                <div className="r-card flexColStart">
+                <div className="r-card flexCenter">
                   <img src={card.image} alt="home"/>
                   <span className='secondaryText r-price'>
-                    <span style={{color: "orange"}}>$</span><span>{card.price}</span>
+                    <span style={{color: "orange"}}></span><span>{card.price}</span>
                   </span>
                   <span className='primaryText'>{card.name}</span>
                   <span className='secondaryText'>{card.detail}</span>

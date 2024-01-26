@@ -3,9 +3,6 @@
     padding-bottom: 5rem;
 }
 
-.v-container .image-container {
-    border: 8px;
-}
 
 .v-container>div {
     flex: 1;

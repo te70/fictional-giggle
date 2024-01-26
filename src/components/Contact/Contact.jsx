@@ -12,7 +12,7 @@ function Contact() {
             <div className="flexColStart c-left">
                 <span className='greenText'>Our Contacts</span>
                 <span className='primaryText'>Easy to contact us</span>
-                <span className='secondaryText'>We always ready to help by believing talent can make your life better</span>
+                <span className='secondaryText'>We always ready to help by believing better operations can make your institution better</span>
 
                 <div className="flexColStart contactModes">
                     {/* first row */}
