@@ -1,5 +1,5 @@
 import { HiShieldCheck } from "react-icons/hi";
-import { MdCancel, MdAnalytics, MdPerson } from "react-icons/md";
+import { MdAnalytics, MdPerson, MdDone } from "react-icons/md";
 const data = [
   {
     icon: <MdPerson />,
@@ -20,7 +20,7 @@ const data = [
       "We can work with schools to streamline processes and improve upon existing systems. By analyzing existing processes, we can identify opportunities to increase efficiency and reduce cost.",
   },
   {
-    icon: <MdAnalytics />,
+    icon: <MdDone />,
     heading: "Better customer experience",
     detail:
       "Through feedback we can improve our process to make your operations are upto standard.",

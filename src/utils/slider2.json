@@ -11,12 +11,12 @@
     },
     {
       "name": "Assessment",
-      "detail": "Our team creates effective improvement plans & helps you to implement them to improve operations. This will be based on priority & budget.",
+      "detail": "Based on evaluation and analysis we come up with a report of the existing management practices & how to improve them.",
       "image": "./assessment.jpg"
     },
     {
-        "name": "Feedback",
-        "detail": "Our Training Programs are geared towards supporting your staff’s specific needs as well as your own",
+        "name": "Implementation",
+        "detail": "Our team creates effective improvement plans & helps you to implement them to improve operations. This will be based on priority & budget.",
         "image": "./feedback.jpg"
       }
   ]

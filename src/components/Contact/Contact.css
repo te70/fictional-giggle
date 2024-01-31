@@ -1,6 +1,7 @@
 .c-container {
     gap: 8rem;
     justify-content: space-between;
+    margin-top: 2rem;
 }
 
 .c-container>div {

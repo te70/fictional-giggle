@@ -23,7 +23,7 @@ function App() {
       <What/>
       <How/>
       <Cor/>
-      <Residencies/>
+      {/* <Residencies/> */}
       <Value/>
       <Contact/>
       <GetStarted/>

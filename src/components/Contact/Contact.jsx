@@ -28,7 +28,7 @@ function Contact() {
                                 </div>
                             </div>
                             <div className="flexCenter button">
-                                Call now
+                            <a href='tel:+254722664002'> Call now</a>
                             </div>
                         </div>
                         {/* second mode */}
@@ -43,7 +43,7 @@ function Contact() {
                                 </div>
                             </div>
                             <div className="flexCenter button">
-                                Mail now
+                               <a href='mailto:info@elvich.co.ke'> Mail now</a>
                             </div>
                         </div>
                     </div>
