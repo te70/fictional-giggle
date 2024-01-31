@@ -74,6 +74,12 @@ a {
   font-size: 2rem;
 }
 
+.primaryText2 {
+  color: #1f3e72;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 .secondaryText {
   color: rgb(140 139 139);
   font-size: 0.9rem;
@@ -88,6 +94,12 @@ a {
   color: #54b580;
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.greenText2 {
+  color: #54b580;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .button{

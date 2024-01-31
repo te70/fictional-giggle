@@ -1,0 +1,24 @@
+.v-container {
+    padding-top: 10rem;
+}
+
+.v-container>div {
+    flex: 1;
+}
+
+@media (max-width: 1024px) {
+    .v-container {
+        flex-direction: column;
+    }
+
+    @media (max-width: 768px) {
+        .accordionButton .primaryText {
+            font-size: 0.7rem;
+        }
+
+        .v-left{
+            width: 95%;
+            height: 25rem; 
+        }
+    }
+} 

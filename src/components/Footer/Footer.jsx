@@ -19,6 +19,7 @@ function Footer() {
 
                 <div className='flexCenter f-menu'>
                     <a href='#value'>Our Value</a>
+                    <a href='#services'>Services</a>
                     <a href='#contact'>Contact us</a>
                 </div>
             </div>

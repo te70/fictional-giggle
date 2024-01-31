@@ -12,7 +12,7 @@ function Value() {
             {/* left side */}
             <div className="flexCenter v-left"> 
                 <div className="image-container"> 
-                    <img src='./lady_2.jpg' alt=''/>
+                    <img src='./value.jpg' alt=''/>
                 </div>
             </div>
 

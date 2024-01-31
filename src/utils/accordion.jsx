@@ -3,7 +3,7 @@ import { MdCancel, MdAnalytics, MdPerson } from "react-icons/md";
 const data = [
   {
     icon: <MdPerson />,
-    heading: "Better strategic building",
+    heading: "Strategic building",
     detail:
       "We have a wide range of experience in helping schools plan strategically for the future. We help schools identify areas where there may be weaknesses and suggest strategies to address them from an operational perspective, all while keeping budget and efficiency in mind.",
   },
@@ -16,6 +16,12 @@ const data = [
   {
     icon: <MdAnalytics />,
     heading: "Process improvement",
+    detail:
+      "We can work with schools to streamline processes and improve upon existing systems. By analyzing existing processes, we can identify opportunities to increase efficiency and reduce cost.",
+  },
+  {
+    icon: <MdAnalytics />,
+    heading: "Better customer experience",
     detail:
       "We can work with schools to streamline processes and improve upon existing systems. By analyzing existing processes, we can identify opportunities to increase efficiency and reduce cost.",
   },

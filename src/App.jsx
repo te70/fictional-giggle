@@ -7,6 +7,10 @@ import Value from './components/Value/Value';
 import Contact from './components/Contact/Contact';
 import GetStarted from './components/GetStarted/GetStarted';
 import Footer from './components/Footer/Footer';
+import What from './components/What/What';
+import How from './components/How/How';
+import Why from './components/Why/Why';
+import Cor from './components/Cor/Cor';
 function App() {
   return (
     <div className="App">
@@ -16,6 +20,9 @@ function App() {
         <Hero/>
       </div>
       {/* <Companies/> */}
+      <What/>
+      <How/>
+      <Cor/>
       <Residencies/>
       <Value/>
       <Contact/>
