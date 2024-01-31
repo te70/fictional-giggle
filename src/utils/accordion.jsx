@@ -23,7 +23,7 @@ const data = [
     icon: <MdAnalytics />,
     heading: "Better customer experience",
     detail:
-      "We can work with schools to streamline processes and improve upon existing systems. By analyzing existing processes, we can identify opportunities to increase efficiency and reduce cost.",
+      "Through feedback we can improve our process to make your operations are upto standard.",
   },
 ];
 export default data;
