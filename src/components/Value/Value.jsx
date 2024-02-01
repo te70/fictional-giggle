@@ -20,7 +20,7 @@ function Value() {
             <div className="flexColStart v-right">
                 <span className='greenText'>Our Value</span>
                 <span className='primaryText'>Value we give to you</span>
-                <span className='secondaryText'>We are ideally suited to help schools manage their operational tasks and ensure they are being maintained in an efficient and effective manner
+                <span className='secondaryText'>We are ideally suited to help schools manage their operational tasks and ensure they are being maintained in an efficient and effective manner.
                 </span>
                 <Accordion
                     className="accordion"

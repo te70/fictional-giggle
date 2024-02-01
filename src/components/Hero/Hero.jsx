@@ -14,7 +14,7 @@ function Hero() {
                     <motion.h1 initial={{y: "2rem", opacity: 0}} animate={{y:0, opacity:1}} transition={{duration: 2, type:"spring"}}>Your Partner<br/>in School <br/>Operations</motion.h1>
                 </div>
                 <div className="flexColStart hero-des">
-                    <span className='primaryText'>supporting schools business<br/> through efficient operational systems</span>
+                    <span className='primaryText'>supporting schools businesses<br/> through efficient operational systems</span>
                     <span className='secondaryText'>Ps: Forget all difficulties of managing operations in your vibrant institution</span>
                 </div>
 

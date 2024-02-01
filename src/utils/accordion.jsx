@@ -11,19 +11,19 @@ const data = [
     icon: <HiShieldCheck />,
     heading: "Cost reduction", 
     detail:
-      "We can help a school to identify areas where you can reduce costs to better help stay within the school’s budget. This can lead to a better understanding of the school’s operational expenses and help to identify areas where money can be saved.",
+      "We help schools to identify areas where they can reduce costs to better help stay within the school's budget. This can lead to a better understanding of the school's operational expenses and help to identify areas where money can be saved.",
   },
   {
     icon: <MdAnalytics />,
     heading: "Process improvement",
     detail:
-      "We can work with schools to streamline processes and improve upon existing systems. By analyzing existing processes, we can identify opportunities to increase efficiency and reduce cost.",
+      "We work with schools to streamline operational processes and improve upon existing systems. By analyzing existing processes, we can identify opportunites to increase efficiency and reduce cost.",
   },
   {
     icon: <MdDone />,
     heading: "Better customer experience",
     detail:
-      "Through feedback we can improve our process to make your operations are upto standard.",
+      "We strive to create a positive and supportive environment that addresses the needs and expectations of students, parents and other stakeholders.",
   },
 ];
 export default data;

@@ -20,7 +20,7 @@ function Cor() {
             <div className="flexColStart v-right">
                 <span className='greenText'>Our Core Values</span>
                 <span className='primaryText'>What guides us</span>
-                <span className='secondaryText'>We have vast experience in school operations & will assist you to implement your business strategy. We make commitments, meet deadlines and deliver on our promise</span>
+                <span className='secondaryText'>We have vast experience in school operations & will assist you to implement your business strategy. We make commitments, meet deadlines and deliver on our promise.</span>
                 <Accordion
                     className="accordion"
                     allowMultipleExpanded={false}
