@@ -12,7 +12,7 @@ function GetStarted() {
                     Find coveted school operations consultancy here
                 </span>
                 <button className="button">
-                    <a href="mailto:tevinkinuthia@gmail.com">Get Started</a>
+                    <a href="mailto:info@elvich.co.ke">Get Started</a>
                 </button>
             </div>
         </div>

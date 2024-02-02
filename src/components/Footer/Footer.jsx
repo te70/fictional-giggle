@@ -14,7 +14,7 @@ function Footer() {
                 </span>
             </div>
             <div className="f-right flexColStart">
-                <span className='primaryText'>Information</span>
+                <span className='primaryText'>Location</span>
                 <span className='secondaryText'>Watermark Business Park, Karen NBO, KE</span>
             </div>
         </div>
