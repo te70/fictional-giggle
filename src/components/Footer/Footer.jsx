@@ -16,12 +16,6 @@ function Footer() {
             <div className="f-right flexColStart">
                 <span className='primaryText'>Information</span>
                 <span className='secondaryText'>Watermark Business Park, Karen NBO, KE</span>
-
-                <div className='flexCenter f-menu'>
-                    <a href='#value'>Our Value</a>
-                    <a href='#services'>Services</a>
-                    <a href='#contact'>Contact us</a>
-                </div>
             </div>
         </div>
     </secton>
