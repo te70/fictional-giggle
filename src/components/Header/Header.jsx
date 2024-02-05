@@ -21,9 +21,9 @@ function Header() {
                 <a href="mailto:info@elvich.co.ke">info@elvich.co.ke</a>
                 <a href="#value">Jobs</a>
                 <a href="#value">Our Value</a>
+                <a href="#contact">Contact</a>
                 <button className="button">
-                    <a href="#contact">Contact</a>
-                    <a href="#contact">Submit cv</a>
+                    <a href="">Submit cv</a>
                 </button> 
             </div>
             </OutsideClickHandler>
