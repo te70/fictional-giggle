@@ -18,9 +18,9 @@ function Header() {
 
             <OutsideClickHandler onOutsideClick={()=>setMenuOpened(false)}>
             <div className="flexCenter h-menu" style={getMenuStyles(menuOpened)}>
+                <a href="mailto:info@elvich.co.ke">info@elvich.co.ke</a>
                 <a href="#value">Our Value</a>
                 <a href="#value">Jobs</a>
-                <a href="mailto:info@elvich.co.ke">info@elvich.co.ke</a>
                 <button className="button">
                     <a href="">Submit cv</a>
                 </button> 
