@@ -1,6 +1,7 @@
 {
-  "name": "realestate",
+  "name": "elvich",
   "private": true,
+  "homepage": "http://elvich.co.ke",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
