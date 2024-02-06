@@ -3,7 +3,7 @@ import './Footer.css'
 
 function Footer() {
   return (
-    <secton className="f-wrapper">
+    <section className="f-wrapper">
         <div className="paddings innerWidth flexCenter f-container">
             {/* left side */}
             <div className="flexColStart f-left">
@@ -18,7 +18,7 @@ function Footer() {
                 <span className='secondaryText'>Watermark Business Park, Karen NBO, KE</span>
             </div>
         </div>
-    </secton>
+    </section>
   )
 }
 

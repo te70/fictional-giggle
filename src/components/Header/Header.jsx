@@ -3,6 +3,7 @@ import './Header.css'
 import {BiMenuAltRight} from 'react-icons/bi'
 import OutsideClickHandler from 'react-outside-click-handler'
 import { useState } from 'react'
+import {Link} from 'react-router-dom'
 
 function Header() {
   const [menuOpened, setMenuOpened] = useState(false)
@@ -22,7 +23,7 @@ function Header() {
                 <a href="#value">Our Value</a>
                 <a href="#value">Jobs</a>
                 <button className="button">
-                    <a href="">Submit cv</a>
+                    <a href="/submit-cv">Submit cv</a>
                 </button> 
             </div>
             </OutsideClickHandler>
