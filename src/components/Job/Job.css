@@ -1,0 +1,17 @@
+.dataTable 
+{
+    margin-top: 2rem;
+}
+
+.jobDetails
+{
+    margin-bottom: 2rem;
+}
+
+.card {
+    border-color: green;
+}
+
+.jobTitle {
+    color: green;
+}

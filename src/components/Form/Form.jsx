@@ -9,7 +9,6 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
 import { Grid } from '@mui/material';
-import Upload from './Upload';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 
@@ -105,14 +104,14 @@ function Form() {
           <span className='primaryText'>Submit Cv</span>
         </div>
         <div>
-<Snackbar
-  open={open}
-  autoHideDuration={6000}
-  onClose={handleClose}
-  message='note'
-  action={action}
-/>
-{successMessage && <p>{successMessage}</p>}</div>
+        <Snackbar
+          open={open}
+          autoHideDuration={6000}
+          onClose={handleClose}
+          message='note'
+          action={action}
+        />
+        {successMessage && <p>{successMessage}</p>}</div>
         <div>{failMessage && <p>{failMessage}</p>}</div>
         <div className='flexColCenter'>
           <Box width="50%">
