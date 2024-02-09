@@ -15,7 +15,7 @@ function Header() {
   return (
     <section className="h-wrapper">
         <div className="flexCenter paddings innerWidth h-container">
-            <img src="/elvich_logo.png" alt="logo" width={150} />
+            <a href='/'><img src="/elvich_logo.png" alt="logo" width={150} /></a>
 
             <OutsideClickHandler onOutsideClick={()=>setMenuOpened(false)}>
             <div className="flexCenter h-menu" style={getMenuStyles(menuOpened)}>
