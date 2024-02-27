@@ -4,6 +4,7 @@ import Form from './components/Form/Form';
 import Plus from './components/Plus/Plus';
 import Job from './components/Job/Job';
 import JobDetails from './components/Job/JobDetails';
+import JobApp from './components/Job/JobApp';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/submit-cv" element={<Form />} ></Route>
            <Route exact path="/jobs" element={<Job />} ></Route>
            <Route path='/jobs/:id' element={<JobDetails/>}></Route>
+           <Route path='/jobs/cv/:id' element={<JobApp/>}></Route>
         </Routes>
       </div>
     </Router>

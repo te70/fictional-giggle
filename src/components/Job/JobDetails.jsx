@@ -62,7 +62,7 @@ function JobDetails() {
                             <Box width="100%" gap={2}>
                                 <Card variant="none" sx={{minWidth: 275}}>
                                     <CardActions className='flexColCenter'>
-                                        <Button size="large" fullWidth variant="contained" color="success" margin="dense" href='mailto:info@elvich.co.ke'>I'M INTERESTED</Button>
+                                        <Button size="large" fullWidth variant="contained" color="success" margin="dense" href={`/jobs/cv/${job.id}`} >I'M INTERESTED</Button>
                                     </CardActions>
                                 </Card>
                             </Box>
