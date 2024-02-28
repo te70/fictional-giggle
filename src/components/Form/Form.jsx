@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useCallback} from 'react'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import { useFormik } from 'formik';
@@ -11,6 +11,8 @@ import Box from '@mui/material/Box';
 import { Grid } from '@mui/material';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
+import Upload from './Upload';
+import {useDropzone} from 'react-dropzone'
 
 const validationSchema = yup.object({
   email: yup
@@ -39,6 +41,34 @@ function Form() {
   const [failMessage, setFailMessage] = useState('');
   const [open, setOpen] = React.useState(false);
 
+  const formik = useFormik({
+    initialValues: {
+      first_name: '',
+      last_name:'',
+      phone_number:'',
+      location:'',
+      email:'',
+      cv: null
+    },
+    validationSchema: validationSchema,
+    onSubmit: async (values, {resetForm}) => {
+      // alert(JSON.stringify(values, null, 2));
+      console.log(values);
+      try {
+        const response = await axios.post('http://127.0.0.1:8000/api/resume/store', values, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          }
+        });
+        // console.log(response.data);
+        handleUploadSuccess();
+        resetForm();
+      } catch(error) {
+        console.log(error);
+        handleFailMessage();
+      }
+    },
+  });
 
   const handleFailMessage = () => {
     setFailMessage('Failed to upload');
@@ -48,6 +78,13 @@ function Form() {
     setSuccessMessage('Uploaded successfully');
 
   };
+
+  const onDrop = useCallback(acceptedFiles => {
+    // Do something with the files
+    console.log(acceptedFiles[0])
+    formik.setFieldValue('cv', acceptedFiles[0]);
+  }, [formik])
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
   const handleClick = () => {
     setOpen(true);
@@ -70,31 +107,7 @@ function Form() {
   );
 
 
-  const formik = useFormik({
-    initialValues: {
-      first_name: '',
-      last_name:'',
-      phone_number:'',
-      location:'',
-      email:'',
-      cv: ''
-    },
-    validationSchema: validationSchema,
-    onSubmit: async (values, {resetForm}) => {
-      // alert(JSON.stringify(values, null, 2));
-      console.log(values);
-      try {
-        const response = await axios.post('http://127.0.0.1:8000/api/resume/store', values);
-        console.log(response.data);
-        handleUploadSuccess();
-        resetForm();
-      } catch(error) {
-        console.log(error);
-        handleFailMessage();
-      }
-    },
-  });
-
+ 
   return (
     <div>
     <Header/>
@@ -114,6 +127,7 @@ function Form() {
         {successMessage && <p>{successMessage}</p>}</div>
         <div>{failMessage && <p>{failMessage}</p>}</div>
         <div className='flexColCenter'>
+       
           <Box width="50%">
             <Card variant='outlined' sx={{ minWidth: 275 }}>
               <CardContent>
@@ -196,11 +210,14 @@ function Form() {
                     />
                     {/* </Grid> */}
                     {/* {/* <Grid item xs={6}> */}
-                    <input placeholder='Upload Cv' id="cv" name="cv" type="file" onChange={(event) => {
-                      formik.setFieldValue("cv", event.currentTarget.files[0]);
-                    }} 
-                    onBlur={formik.handleBlur}
-                    />
+                    <div {...getRootProps()}>
+                        <input {...getInputProps()} />
+                        {
+                          isDragActive ?
+                            <p>Drop the files here ...</p> :
+                            <p>Drag 'n' drop some files here, or click to select files</p>
+                        }
+                      </div>
                     {/* </Grid> */}
                     {/* </Grid> */}
                   <Button type="submit" color="success" fullWidth variant='contained' margin="dense">
@@ -210,6 +227,7 @@ function Form() {
             </CardContent>
             </Card>
           </Box>
+          <Upload/>
         </div>
       </div>
     </section>
