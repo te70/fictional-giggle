@@ -11,8 +11,8 @@ import Box from '@mui/material/Box';
 import { Grid } from '@mui/material';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
-import Upload from './Upload';
 import {useDropzone} from 'react-dropzone'
+import './form.css';
 
 const validationSchema = yup.object({
   email: yup
@@ -52,7 +52,6 @@ function Form() {
     },
     validationSchema: validationSchema,
     onSubmit: async (values, {resetForm}) => {
-      // alert(JSON.stringify(values, null, 2));
       console.log(values);
       try {
         const response = await axios.post('http://127.0.0.1:8000/api/resume/store', values, {
@@ -60,7 +59,6 @@ function Form() {
             'Content-Type': 'multipart/form-data',
           }
         });
-        // console.log(response.data);
         handleUploadSuccess();
         resetForm();
       } catch(error) {
@@ -72,15 +70,19 @@ function Form() {
 
   const handleFailMessage = () => {
     setFailMessage('Failed to upload');
+    setTimeout(() => {
+      setFailMessage('');
+    }, 5000);
   }
 
   const handleUploadSuccess = () => {
     setSuccessMessage('Uploaded successfully');
-
+    setTimeout(() => {
+      setSuccessMessage('');
+    }, 5000);
   };
 
   const onDrop = useCallback(acceptedFiles => {
-    // Do something with the files
     console.log(acceptedFiles[0])
     formik.setFieldValue('cv', acceptedFiles[0]);
   }, [formik])
@@ -94,7 +96,6 @@ function Form() {
     if (reason === 'clickaway') {
       return;
     }
-
     setOpen(false);
   };
 
@@ -104,10 +105,7 @@ function Form() {
         UNDO
       </Button>
     </React.Fragment>
-  );
-
-
- 
+  ); 
   return (
     <div>
     <Header/>
@@ -116,24 +114,14 @@ function Form() {
         <div className="r-head flexColCenter">
           <span className='primaryText'>Submit Cv</span>
         </div>
-        <div>
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={handleClose}
-          message='note'
-          action={action}
-        />
-        {successMessage && <p>{successMessage}</p>}</div>
-        <div>{failMessage && <p>{failMessage}</p>}</div>
+        <div className='success flexColCenter'>{successMessage && <p>{successMessage}</p>}</div>
+        <div className='fail flexColCenter'>{failMessage && <p>{failMessage}</p>}</div>
         <div className='flexColCenter'>
        
           <Box width="50%">
             <Card variant='outlined' sx={{ minWidth: 275 }}>
               <CardContent>
                 <form onSubmit={formik.handleSubmit}>
-                  {/* <Grid container spacing={2}> */}
-                  {/* <Grid item xs={6}> */}
                     <TextField
                       fullWidth
                       id="first_name"
@@ -146,8 +134,6 @@ function Form() {
                       error={formik.touched.first_name && Boolean(formik.errors.first_name)}
                       helperText={formik.touched.first_name && formik.errors.first_name}
                     />
-                    {/* </Grid> */}
-                    {/* <Grid item xs={6}> */}
                     <TextField
                       fullWidth
                       id="last_name"
@@ -161,10 +147,6 @@ function Form() {
                       error={formik.touched.last_name && Boolean(formik.errors.last_name)}
                       helperText={formik.touched.last_name && formik.errors.last_name}
                     />
-                    {/* </Grid> */}
-                    {/* </Grid> */}
-                    {/* <Grid container spacing={2}> */}
-                  {/* <Grid item xs={6}> */}
                     <TextField
                       fullWidth
                       id="email"
@@ -177,8 +159,6 @@ function Form() {
                       error={formik.touched.email && Boolean(formik.errors.email)}
                       helperText={formik.touched.email && formik.errors.email}
                     />
-                    {/* </Grid> */}
-                    {/* <Grid item xs={6}> */}
                     <TextField
                       fullWidth
                       id="phone_number"
@@ -192,10 +172,6 @@ function Form() {
                       error={formik.touched.phone_number && Boolean(formik.errors.phone_number)}
                       helperText={formik.touched.phone_number && formik.errors.phone_number}
                     />
-                    {/* </Grid> */}
-                    {/* </Grid> */}
-                    {/* <Grid container spacing={2}> */}
-                  {/* <Grid item xs={6}> */}
                     <TextField
                       fullWidth
                       id="location"
@@ -208,18 +184,14 @@ function Form() {
                       error={formik.touched.location && Boolean(formik.errors.location)}
                       helperText={formik.touched.location && formik.errors.location}
                     />
-                    {/* </Grid> */}
-                    {/* {/* <Grid item xs={6}> */}
-                    <div {...getRootProps()}>
-                        <input {...getInputProps()} />
+                    <div  {...getRootProps()}>
+                        <input className="upload" {...getInputProps()} />
                         {
                           isDragActive ?
                             <p>Drop the files here ...</p> :
-                            <p>Drag 'n' drop some files here, or click to select files</p>
+                            <p>Upload your cv in pdf format</p>
                         }
                       </div>
-                    {/* </Grid> */}
-                    {/* </Grid> */}
                   <Button type="submit" color="success" fullWidth variant='contained' margin="dense">
                     Submit
                   </Button>
@@ -227,7 +199,6 @@ function Form() {
             </CardContent>
             </Card>
           </Box>
-          <Upload/>
         </div>
       </div>
     </section>

@@ -39,8 +39,10 @@ export default function BasicTable() {
             <TableCell align="right">Published date</TableCell>
           </TableRow>
         </TableHead>
+        
         <TableBody>
-          {rows.map((row) => (
+          {rows && rows.length > 0 ? (
+          rows.map((row) => (
             <TableRow
               key={row.job_title}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -53,7 +55,12 @@ export default function BasicTable() {
               <TableCell align="right">{row.id}</TableCell>
               <TableCell align="right">{row.created_at}</TableCell>
             </TableRow>
-          ))}
+          ))
+          ) : (
+            <TableRow>
+              <TableCell colSpan={5} align="center">No jobs available</TableCell>
+            </TableRow>
+          )} 
         </TableBody>
       </Table>
     </TableContainer>

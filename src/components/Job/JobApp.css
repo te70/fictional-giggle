@@ -1,6 +1,8 @@
-.form-wrapper 
-{
-    width: 50%;
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 .success {
@@ -13,9 +15,4 @@
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
-}
-
-.upload {
-    border-color: blue;
-    cursor: pointer;
 }

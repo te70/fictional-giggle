@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState, useCallback } from 'react'
 import { useParams } from 'react-router-dom';
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
@@ -12,6 +12,8 @@ import Box from '@mui/material/Box';
 import { Grid } from '@mui/material';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
+import {useDropzone} from 'react-dropzone';
+import './JobApp.css';
 
 const validationSchema = yup.object({
   email: yup
@@ -41,13 +43,58 @@ function JobApp() {
   const [open, setOpen] = React.useState(false);
   const { id } = useParams();
 
+  const formik = useFormik({
+    initialValues: {
+      first_name: '',
+      last_name:'',
+      phone_number:'',
+      location:'',
+      email:'',
+      cv: '',
+      id: id
+    },
+    validationSchema: validationSchema,
+    onSubmit: async (values, {resetForm}) => {
+
+      try {
+        const formData = new FormData();
+        formData.append('first_name', values.first_name);
+        formData.append('last_name', values.last_name);
+        formData.append('email', values.email);
+        formData.append('phone_number', values.phone_number);
+        formData.append('location', values.location);
+        formData.append('id', values.id);
+        formData.append('cv', values.cv);
+        const response = await axios.post('http://127.0.0.1:8000/api/resume/store', formData);
+        console.log(response.data);
+        handleUploadSuccess();
+        resetForm();
+      } catch(error) {
+        console.log(error);
+        handleFailMessage();
+      }
+    },
+  });
+
+  const onDrop = useCallback(acceptedFiles => {
+    // Do something with the files
+    console.log(acceptedFiles[0])
+    formik.setFieldValue('cv', acceptedFiles[0]);
+  }, [formik])
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+
   const handleFailMessage = () => {
     setFailMessage('Failed to upload');
+    setTimeout(() => {
+      setFailMessage('');
+    }, 5000);
   }
 
   const handleUploadSuccess = () => {
     setSuccessMessage('Uploaded successfully');
-
+    setTimeout(() => {
+      setSuccessMessage('');
+    }, 5000);
   };
 
   const handleClick = () => {
@@ -71,38 +118,7 @@ function JobApp() {
   );
 
 
-  const formik = useFormik({
-    initialValues: {
-      first_name: '',
-      last_name:'',
-      phone_number:'',
-      location:'',
-      email:'',
-      cv: '',
-      id: id
-    },
-    validationSchema: validationSchema,
-    onSubmit: async (values, {resetForm}) => {
-
-      try {
-        const formData = new FormData();
-        formData.append('first_name', values.first_name);
-        formData.append('last_name', values.last_name);
-        formData.append('email', values.email);
-        formData.append('phone_number', values.phone_number);
-        formData.append('location', values.location);
-        formData.append('id', values.id);
-        formData.append('cv', values.cv[0]);
-        const response = await axios.post('http://127.0.0.1:8000/api/resume/store', formData);
-        console.log(response.data);
-        handleUploadSuccess();
-        resetForm();
-      } catch(error) {
-        console.log(error);
-        handleFailMessage();
-      }
-    },
-  });
+  
 
   return (
     <div>
@@ -112,23 +128,13 @@ function JobApp() {
         <div className="r-head flexColCenter">
           <span className='primaryText'>Submit Cv</span>
         </div>
-        <div>
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={handleClose}
-          message='note'
-          action={action}
-        />
-        {successMessage && <p>{successMessage}</p>}</div>
-        <div>{failMessage && <p>{failMessage}</p>}</div>
+        <div className='success flexColCenter'> {successMessage && <p>{successMessage}</p>}</div>
+        <div className='fail flexColCenter'>{failMessage && <p>{failMessage}</p>}</div>
         <div className='flexColCenter'>
           <Box width="50%">
             <Card variant='outlined' sx={{ minWidth: 275 }}>
               <CardContent>
                 <form onSubmit={formik.handleSubmit} enctype="multipart/form-data">
-                  {/* <Grid container spacing={2}> */}
-                  {/* <Grid item xs={6}> */}
                     <TextField
                       fullWidth
                       id="first_name"
@@ -141,8 +147,6 @@ function JobApp() {
                       error={formik.touched.first_name && Boolean(formik.errors.first_name)}
                       helperText={formik.touched.first_name && formik.errors.first_name}
                     />
-                    {/* </Grid> */}
-                    {/* <Grid item xs={6}> */}
                     <TextField
                       fullWidth
                       id="last_name"
@@ -156,10 +160,6 @@ function JobApp() {
                       error={formik.touched.last_name && Boolean(formik.errors.last_name)}
                       helperText={formik.touched.last_name && formik.errors.last_name}
                     />
-                    {/* </Grid> */}
-                    {/* </Grid> */}
-                    {/* <Grid container spacing={2}> */}
-                  {/* <Grid item xs={6}> */}
                     <TextField
                       fullWidth
                       id="email"
@@ -171,9 +171,7 @@ function JobApp() {
                       onBlur={formik.handleBlur}
                       error={formik.touched.email && Boolean(formik.errors.email)}
                       helperText={formik.touched.email && formik.errors.email}
-                    />
-                    {/* </Grid> */}
-                    {/* <Grid item xs={6}> */}
+                    />     
                     <TextField
                       fullWidth
                       id="phone_number"
@@ -187,10 +185,6 @@ function JobApp() {
                       error={formik.touched.phone_number && Boolean(formik.errors.phone_number)}
                       helperText={formik.touched.phone_number && formik.errors.phone_number}
                     />
-                    {/* </Grid> */}
-                    {/* </Grid> */}
-                    {/* <Grid container spacing={2}> */}
-                  {/* <Grid item xs={6}> */}
                     <TextField
                       fullWidth
                       id="location"
@@ -203,11 +197,14 @@ function JobApp() {
                       error={formik.touched.location && Boolean(formik.errors.location)}
                       helperText={formik.touched.location && formik.errors.location}
                     />
-                    {/* </Grid> */}
-                    {/* {/* <Grid item xs={6}> */}
-                    <input placeholder='Upload Cv' id="cv" name="cv" type="file" accept="application/pdf" onBlur={formik.handleBlur} />
-                    {/* </Grid> */}
-                    {/* </Grid> */}
+                    <div {...getRootProps()}>
+                        <input {...getInputProps()} />
+                        {
+                          isDragActive ?
+                            <p>Drop the files here ...</p> :
+                            <p>Upload your cv in pdf format</p>
+                        }
+                      </div>
                   <Button type="submit" color="success" fullWidth variant='contained' margin="dense">
                     Submit
                   </Button>
